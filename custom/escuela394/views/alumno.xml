@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="escuela_alumno_action" name="alumno"
+                     res_model="escuela.alumno" />
+
+
+        <record id="escuela_alumno_view_tree" model="ir.ui.view">
+            <field name="name">Lista alumnos</field>
+            <field name="model">escuela.alumno</field>
+            <field name="arch" type="xml">
+
+                <tree>
+                    <field  name="codigoAlu" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="fecha" />
+                    <field name="cp" />
+                    <field name="codigoProf"/>
+                    <field name="asignatura" />
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="escuela_alumno_view_form" model="ir.ui.view">
+            <field name="name">Formulario de Alumnos</field>
+            <field name="model">escuela.alumno</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field  name="codigoAlu" />
+                        <field name="nombre" />
+                        <field name="apellidos" />
+                        <field name="fecha" />
+                        <field name="cp" />
+                        <field name="direccion" />
+                        <field name="codigoProf"/>
+                        <field name="asignatura" />
+                    </group>
+
+                </form>
+            </field>
+        </record>
+
+
+        <record id="escuela_alumno_view_search_alumno" model="ir.ui.view">
+            <field name="name">Busqueda alumno</field>
+            <field name="model">escuela.alumno</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="nombre" />
+                </search>
+            </field>
+        </record>
+
+        <menuitem name="Menu" id="menu_menu" parent="menu_escuela" sequence="10"/>
+        <menuitem name="Alumno" id="menu_alumno" action="escuela_alumno_action" parent="menu_menu" sequence="10"/>
+
+    </data>
+</odoo>
